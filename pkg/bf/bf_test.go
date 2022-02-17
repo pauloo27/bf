@@ -7,10 +7,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// TODO: some edge cases
-
 func TestMemoryNavigation(t *testing.T) {
-	t.Skip()
 	t.Run("empty program", func(t *testing.T) {
 		pgr := bf.NewProgram("", "")
 		_, err := pgr.Run()
@@ -41,7 +38,6 @@ func TestMemoryNavigation(t *testing.T) {
 }
 
 func TestMemoryUpdate(t *testing.T) {
-	t.Skip()
 	t.Run("+ operator", func(t *testing.T) {
 		pgr := bf.NewProgram("+++++", "")
 		_, err := pgr.Run()
@@ -68,7 +64,6 @@ func TestMemoryUpdate(t *testing.T) {
 }
 
 func TestInputRead(t *testing.T) {
-	t.Skip()
 	t.Run("read from input", func(t *testing.T) {
 		pgr := bf.NewProgram(">,", " ")
 		_, err := pgr.Run()
@@ -88,7 +83,6 @@ func TestInputRead(t *testing.T) {
 }
 
 func TestWriteOutput(t *testing.T) {
-	t.Skip()
 	t.Run("write to output", func(t *testing.T) {
 		pgr := bf.NewProgram(">,>,.<.", " A")
 		out, err := pgr.Run()
