@@ -11,7 +11,7 @@ run: build
 
 .PHONY: test
 test: 
-	$(TEST_COMMAND) -cover -parallel 5 -failfast  ./... 
+	$(TEST_COMMAND) -v -cover -parallel 5 -failfast  ./... 
 
 .PHONY: tidy
 tidy:
