@@ -1,5 +1,9 @@
 package bf
 
+import (
+	"fmt"
+)
+
 /**
   a bad brainfuck interpreter.
 */
@@ -21,6 +25,7 @@ type Program struct {
 
 func (p *Program) Run() (output []byte, err error) {
 	programSize := len(p.Program)
+	inputSize := len(p.Input)
 	output = make([]byte, memorySize)
 	for {
 		if p.ProgramIndex >= programSize {
@@ -36,6 +41,10 @@ func (p *Program) Run() (output []byte, err error) {
 		case '-':
 			p.Memory[p.MemoryIndex]--
 		case ',':
+			if p.InputIndex >= inputSize {
+				err = fmt.Errorf("input size is %d but tried to read at %d", inputSize, p.InputIndex)
+				return
+			}
 			p.Memory[p.MemoryIndex] = p.Input[p.InputIndex]
 			p.InputIndex++
 		case '.':

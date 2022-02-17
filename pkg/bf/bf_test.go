@@ -80,6 +80,12 @@ func TestInputRead(t *testing.T) {
 		require.Equal(t, byte(32), pgr.Memory[1])
 		require.Equal(t, byte(65), pgr.Memory[2])
 	})
+
+	t.Run("read from input where there's not input", func(t *testing.T) {
+		pgr := bf.NewProgram(">,>,", "")
+		_, err := pgr.Run()
+		require.NotNil(t, err)
+	})
 }
 
 func TestWriteOutput(t *testing.T) {
