@@ -1,8 +1,6 @@
 # BF
 
-A (not well tested) brainfuck interpreter written in Go while the programmer was drunk.
-
-I don't know if it work properly, but I hope so.
+A simple (not well tested) brainfuck interpreter written in Go.
 
 ## License
 
